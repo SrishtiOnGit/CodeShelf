@@ -3,9 +3,22 @@ import Logo from "../assets/logo.png";
 
 import "./navbar.css";
 
+import { useEffect, useState } from "react";
+
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <Link to="/">
         <img src={Logo} alt="Logo" className="nav-logo " />
       </Link>
