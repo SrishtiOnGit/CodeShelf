@@ -6,6 +6,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ProblemGraph from "./components/problem";
 import Features from "./components/features";
+import Works from "./components/works";
+import FAQ from "./components/faq";
+import CTA from "./components/cta";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -19,6 +22,9 @@ function App() {
       <Hero />
       <ProblemGraph />
       <Features />
+      <Works />
+      <FAQ />
+      <CTA />
     </>
   );
 }

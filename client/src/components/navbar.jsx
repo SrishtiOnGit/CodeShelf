@@ -25,19 +25,19 @@ const Navbar = () => {
 
       <ul className="nav-links">
         <li>
-          <Link to="/" className="nav-items">
+          <a href="#features" className="nav-items">
             Features
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="/works" className="nav-items">
+          <a href="#works" className="nav-items">
             How it works?
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="/contact" className="nav-items">
+          <a href="#faq" className="nav-items">
             FAQ
-          </Link>
+          </a>
         </li>
       </ul>
       <div className="nav-items">

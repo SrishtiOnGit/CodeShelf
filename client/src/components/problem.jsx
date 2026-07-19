@@ -2,7 +2,7 @@ import "./problem.css";
 
 const ProblemGraph = () => {
   return (
-    <>
+    <div data-aos="fade-up">
       <h1>The Problem</h1>
       <div className="problem-graph">
         <div className="first">
@@ -18,7 +18,7 @@ const ProblemGraph = () => {
           <p className="bar-text">7 places to search</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
