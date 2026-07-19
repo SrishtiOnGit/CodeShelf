@@ -1,0 +1,52 @@
+.features-container {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 2rem;
+}
+
+.features-container h1 {
+  font-size: 5rem;
+  color: var(--text);
+  text-align: center;
+  font-family: var(--font-title);
+  margin-bottom: 18px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.feature {
+  border: 1px solid var(--border);
+
+  padding: 2rem;
+
+  min-height: 220px;
+
+  transition: all 0.35s ease;
+
+  cursor: pointer;
+}
+
+.feature h2 {
+  color: var(--text);
+
+  font-size: 1.5rem;
+
+  margin-bottom: 16px;
+
+  font-family: var(--font-title);
+}
+
+.feature p {
+  color: var(--text-muted);
+
+  line-height: 1.8;
+
+  text-align: left;
+
+  font-size: 0.98rem;
+}

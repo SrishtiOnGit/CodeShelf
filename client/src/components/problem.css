@@ -1,0 +1,71 @@
+.problem-graph {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  margin-top: 2rem;
+  font-family: var(--font-title);
+}
+
+.first,
+.second,
+.third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text);
+  height: 500px;
+  width: 400px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bar-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  font-family: var(--font-body);
+  color: black;
+  width: 100%;
+  margin-left: 2rem;
+  margin-bottom: 20rem;
+}
+
+.bar-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: black;
+  width: 100%;
+  margin-left: 2rem;
+}
+
+.first {
+  background-color: #ddf6e8;
+}
+
+.second {
+  background-color: #e7e1ff;
+}
+
+.third {
+  background-color: #ffe5d8;
+}
+
+.first:hover,
+.second:hover,
+.third:hover {
+  transform: translateY(-16px);
+  transition: all 0.35s ease;
+  height: 550px;
+}

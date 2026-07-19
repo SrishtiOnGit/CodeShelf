@@ -18,7 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`} data-aos="fade-up">
       <Link to="/">
         <img src={Logo} alt="Logo" className="nav-logo " />
       </Link>
