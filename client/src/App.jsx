@@ -1,4 +1,5 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import { useEffect } from "react";
@@ -9,7 +10,9 @@ import Features from "./components/features";
 import Works from "./components/works";
 import FAQ from "./components/faq";
 import CTA from "./components/cta";
-function App() {
+import Footer from "./components/footer";
+import SignUp from "./pages/auth/signup";
+function HomePage() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -25,7 +28,19 @@ function App() {
       <Works />
       <FAQ />
       <CTA />
+      <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </div>
   );
 }
 

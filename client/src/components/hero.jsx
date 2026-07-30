@@ -9,7 +9,7 @@ const hero = () => {
         <h1>Your personal library for reusable code snippets.</h1>
 
         <div className="hero-container">
-          <button className="hero-start" onClick={() => navigate("/login")}>
+          <button className="hero-start" onClick={() => navigate("/signup")}>
             Start For Free
           </button>
           <button
