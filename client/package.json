@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/geist": "^5.2.9",
+    "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.3.3",
     "aos": "^2.3.4",
     "react": "^19.2.7",

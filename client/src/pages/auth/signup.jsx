@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./signup.css";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,8 @@ const SignUp = () => {
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="signup">
@@ -51,7 +54,7 @@ const SignUp = () => {
         </label>
       </div>
 
-      <button>Sign Up</button>
+      <button onClick={() => navigate("/dashboard")}>Sign Up</button>
     </div>
   );
 };

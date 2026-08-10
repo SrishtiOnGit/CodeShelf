@@ -12,6 +12,7 @@ import FAQ from "./components/faq";
 import CTA from "./components/cta";
 import Footer from "./components/footer";
 import SignUp from "./pages/auth/signup";
+import Dashboard from "./pages/dashboard/dashboard";
 function HomePage() {
   useEffect(() => {
     AOS.init({
@@ -39,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );

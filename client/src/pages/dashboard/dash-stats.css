@@ -1,0 +1,58 @@
+.dashstats {
+  margin: 120px auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  position: relative;
+}
+
+.dasher {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.dashstat {
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 2rem;
+  min-height: 180px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  min-width: 300px;
+}
+
+.dashstat:nth-child(1) {
+  border-left: 7px solid blueviolet;
+}
+
+.dashstat:nth-child(2) {
+  border-left: 7px solid aquamarine;
+}
+
+.dashstat:nth-child(3) {
+  border-left: 7px solid rgb(237, 170, 207);
+}
+
+.dashstat:nth-child(4) {
+  border-left: 7px solid rgb(229, 244, 158);
+}
+.dashstat h2 {
+  color: var(--text);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-family: var(--font-title);
+}
+
+.dashstat p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 50px;
+}
