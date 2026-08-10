@@ -1,14 +1,29 @@
 import "./dash-stats.css";
 
-const DashStats = () => {
+const DashStats = ({ snippets }) => {
+  const totalSnippets = snippets.length;
+
+  const languages = new Set(snippets.map((snippet) => snippet.language));
+
+  const languageCounts = {};
+
+  snippets.forEach((snippet) => {
+    const language = snippet.language;
+
+    languageCounts[language] = (languageCounts[language] || 0) + 1;
+  });
+
+  const topLanguage =
+    Object.entries(languageCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || "--";
+
   const dashstats = [
     {
       name: "Total Snippets",
-      value: "0",
+      value: totalSnippets,
     },
     {
       name: "Languages",
-      value: "0",
+      value: languages.size,
     },
     {
       name: "Favourites",
@@ -16,7 +31,7 @@ const DashStats = () => {
     },
     {
       name: "Top Language",
-      value: "--",
+      value: topLanguage,
     },
   ];
 

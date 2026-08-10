@@ -3,10 +3,44 @@ import "./modal.css";
 import { IoClose } from "react-icons/io5";
 import Editor from "@monaco-editor/react";
 
-const Modal = ({ onClose }) => {
+const Modal = ({ onClose, onSaved }) => {
   const [language, setLanguage] = useState("javascript");
   const [code, setCode] = useState("");
+  const [title, setTitle] = useState("");
+  const [tags, setTags] = useState("");
+  const [description, setDescription] = useState("");
 
+  const handleSave = async () => {
+    console.log("SAVE BUTTON CLICKED");
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/snippets/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+          language,
+          tags,
+          description,
+          code,
+        }),
+      });
+
+      const data = await response.json();
+
+      console.log("STATUS:", response.status);
+      console.log("DATA:", data);
+
+      if (response.status === 201) {
+        onSaved();
+        onClose();
+      }
+    } catch (error) {
+      console.error("SAVE ERROR:", error);
+    }
+  };
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="snippet-modal" onClick={(e) => e.stopPropagation()}>
@@ -24,8 +58,9 @@ const Modal = ({ onClose }) => {
             id="title"
             type="text"
             placeholder="Authentication using JWT"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
-
           <label htmlFor="language">Language</label>
 
           <select
@@ -47,15 +82,22 @@ const Modal = ({ onClose }) => {
           </select>
 
           <label htmlFor="tags">Tags</label>
-          <input id="tags" type="text" placeholder="react, auth, jwt" />
+          <input
+            id="tags"
+            type="text"
+            placeholder="react, auth, jwt"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+          />
 
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
             rows="3"
             placeholder="Short description..."
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
-
           <label>Code</label>
 
           <Editor
@@ -82,7 +124,7 @@ const Modal = ({ onClose }) => {
             Cancel
           </button>
 
-          <button className="save-btn" type="button">
+          <button className="save-btn" onClick={handleSave} type="button">
             Save Snippet
           </button>
         </div>

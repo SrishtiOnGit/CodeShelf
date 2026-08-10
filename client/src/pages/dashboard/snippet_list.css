@@ -1,0 +1,98 @@
+.snippet-list {
+  padding: 24px;
+}
+
+.snippet-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.snippet-title {
+  margin-left: 10px;
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+.snippet-count {
+  margin-left: 10px;
+  color: #8b93a7;
+  font-size: 14px;
+}
+
+.snippet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.snippet-card {
+  padding: 20px;
+  border: 1px solid #293345;
+  border-radius: 14px;
+  background: #161d2b;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.snippet-card:hover {
+  transform: translateY(-3px);
+  border-color: #46546d;
+}
+
+.snippet-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.snippet-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.snippet-language {
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: #222c3d;
+  color: #9da9ff;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.snippet-card p {
+  margin: 14px 0;
+  color: #929bad;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.snippet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.snippet-tags span {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #202a3a;
+  color: #aab4c7;
+  font-size: 12px;
+}
+
+.btn-delete {
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--primary);
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
