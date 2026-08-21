@@ -14,6 +14,11 @@ My Purpose of building CodeShelf was really learning Django.. I had this project
 2. Adding Auth..
 3. Creating a real search-engine and more.
 
+## Local Setup : 
+1. Clone the repo : git clone https://github.com/SrishtiOnGit/CodeShelf.git
+2. npm install
+3. npm run dev
+
 ## Demo Link and ScreenShots..
 
 https://srishtiongit.github.io/CodeShelf/
